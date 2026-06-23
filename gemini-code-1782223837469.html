@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALE'SKIN - Corporativo de Estética & Cuidado Facial</title>
+    <style>
+        /* Paleta de Colores Skin Care & Tipografía */
+        :root {
+            --bg-principal: #fdf8f5;     /* Crema suave/hidratante */
+            --rosa-pastel: #f7d6cd;      /* Rosa tierno / tónico facial */
+            --rosa-oscuro: #e8a598;      /* Rosa viejo elegante / Arcilla */
+            --texto-principal: #3a3230;  /* Café oscuro/antracita para máxima legibilidad */
+            --blanco-puro: #ffffff;
+            --oro-rosado: #d49a89;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-principal);
+            color: var(--texto-principal);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--blanco-puro);
+            border-bottom: 2px solid var(--rosa-pastel);
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Simulación de Contenedor de Logo */
+        .logo-container {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--rosa-pastel), var(--rosa-oscuro));
+            border-radius: 50%;
+            margin: 0 auto 10px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid var(--blanco-puro);
+            box-shadow: 0 4px 10px rgba(232, 165, 152, 0.3);
+        }
+
+        .logo-placeholder {
+            font-weight: bold;
+            color: var(--blanco-puro);
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--texto-principal);
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-style: italic;
+            color: var(--oro-rosado);
+            font-size: 1rem;
+            margin-top: 5px;
+        }
+
+        nav {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--texto-principal);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 5px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--rosa-pastel);
+            color: var(--texto-principal);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background-color: var(--blanco-puro);
+            border-radius: 16px;
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: 0 6px 15px rgba(58, 50, 48, 0.04);
+            border: 1px solid rgba(247, 214, 205, 0.5);
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            color: var(--texto-principal);
+            border-left: 5px solid var(--rosa-oscuro);
+            padding-left: 12px;
+            margin-bottom: 25px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin: 20px 0 10px 0;
+            color: var(--oro-rosado);
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* Estilos de la Cultura Organizacional */
+        .coc-grid {
+            display: block;
+        }
+
+        .coc-box {
+            background-color: var(--bg-principal);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--rosa-pastel);
+        }
+
+        ul {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Tabla del Organigrama */
+        .organigrama-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: var(--blanco-puro);
+        }
+
+        .organigrama-table th, .organigrama-table td {
+            border: 1px solid var(--rosa-pastel);
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        .organigrama-table th {
+            background-color: var(--rosa-oscuro);
+            color: var(--blanco-puro);
+            font-weight: 600;
+        }
+
+        .organigrama-table tr:nth-child(even) {
+            background-color: var(--bg-principal);
+        }
+
+        .nivel-alta { font-weight: bold; color: #a45a4b; }
+        .nivel-media { font-weight: bold; color: var(--oro-rosado); }
+
+        /* Estilos Currículum Vitae */
+        .cv-header {
+            border-bottom: 2px dashed var(--rosa-pastel);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .cv-meta {
+            font-size: 0.95rem;
+            color: #70625f;
+            margin-bottom: 10px;
+        }
+
+        /* Formulario de Registro */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--rosa-pastel);
+            border-radius: 8px;
+            background-color: var(--bg-principal);
+            color: var(--texto-principal);
+            font-size: 1rem;
+            outline: none;
+            transition: border 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border: 1px solid var(--rosa-oscuro);
+            background-color: var(--blanco-puro);
+        }
+
+        button {
+            background-color: var(--rosa-oscuro);
+            color: var(--blanco-puro);
+            border: none;
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(232, 165, 152, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--oro-rosado);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background-color: var(--texto-principal);
+            color: var(--rosa-pastel);
+            text-align: center;
+            padding: 25px;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <span class="logo-placeholder">AS</span>
+        </div>
+        <h1>ALE'SKIN</h1>
+        <p>"Tu piel, tu esencia, nuestro compromiso técnico profesional"</p>
+        
+        <nav>
+            <a href="#coc">Cultura Organizacional (D2.3)</a>
+            <a href="#organigrama">Organigrama</a>
+            <a href="#cv-haslin">Hoja de Vida</a>
+            <a href="#registro">Bolsa de Trabajo en Línea</a>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <section id="coc">
+            <h2>D2.3. Formulando de manera creativa y técnica la COC</h2>
+            
+            <div class="coc-grid">
+                <div class="coc-box">
+                    <h3>1. Identidad Visual: Logo y Slogan</h3>
+                    <p><strong>Descripción del Logo:</strong> El isotipo está representado por las iniciales "AS" entrelazadas en finas líneas doradas y rosáceas, rodeadas por una silueta circular orgánica que simula una gota de sérum purificante y renovación celular, transmitiendo pulcritud, balance dermatológico y profesionalismo.</p>
+                    <p><strong>Slogan Comercial:</strong> <em>"Tu piel, tu esencia, nuestro compromiso técnico profesional."</em> Refleja la fusión exacta entre el cuidado estético personalizado y el rigor financiero-contable que sustenta las operaciones comerciales de la empresa.</p>
+                </div>
+
+                <div class="coc-box">
+                    <h3>2. Misión Institucional</h3>
+                    <p>Proveer soluciones integrales de Skin Care y comercialización de productos dermoestéticos de la más alta calidad, optimizando los recursos financieros y comerciales mediante una gestión técnica administrativa transparente, orientada a elevar la confianza, bienestar y salud cutánea de nuestros clientes salvadoreños.</p>
+                </div>
+
+                <div class="coc-box">
+                    <h3>3. Visión Institucional</h3>
+                    <p>Ser el corporativo líder en El Salvador en la gestión, distribución y desarrollo de productos para el cuidado de la piel en el año 2030, reconocidos por nuestra solidez financiera, innovación en marketing digital y el estricto cumplimiento legal-contable en el sector de la cosmética y salud estética.</p>
+                </div>
+
+                <div class="coc-box">
+                    <h3>4. Valores Corporativos y Roles Técnicos</h3>
+                    <ul>
+                        <li><strong>Integridad y Transparencia Financiera:</strong> Garantizar registros económicos exactos y auditorías nítidas en beneficio del sector cooperativo y comercial.</li>
+                        <li><strong>Calidad e Innovación Dermoestética:</strong> Búsqueda constante de tendencias globales en Skin Care y formulaciones adaptadas a las necesidades del cliente.</li>
+                        <li><strong>Responsabilidad Social y Legal:</strong> Cumplimiento de todas las normativas del Ministerio de Salud (MINSAL) y del Ministerio de Trabajo (MTPS)[cite: 4, 5].</li>
+                    </ul>
+                </div>
+
+                <div class="coc-box">
+                    <h3>5. Modelo de Empresa y Justificación Técnica</h3>
+                    <p><strong>Modelo Seleccionado:</strong> Empresa Comercial de Servicios y Distribución Digital bajo el modelo de Sociedad de Responsabilidad Limitada (R.L. / S.A. de C.V.).</p>
+                    <p><strong>Justificación:</strong> El cuidado de la piel requiere un modelo ágil basado en la importación técnica de insumos certificados y la inmediata colocación al consumidor mediante canales de Marketing Digital y puntos de venta especializados[cite: 4, 6]. Financieramente, permite estructurar costos fijos y variables eficientemente, facilitando el control de los créditos fiscales de IVA por importación y asegurando márgenes de utilidad óptimos para los inversionistas[cite: 4].</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="organigrama">
+            <h2>Organigrama de Funcionamiento Institucional</h2>
+            <p>Estructura organizacional jerárquica y funcional de ALE'SKIN, diseñada de manera estratégica para enfatizar la articulación entre las áreas directivas, el control contable y la operación de distribución:</p>
+            
+            <table class="organigrama-table">
+                <thead>
+                    <tr>
+                        <th>Nivel Jerárquico</th>
+                        <th>Puesto de Trabajo / Unidad</th>
+                        <th>Funciones Clave en ALE'SKIN</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="nivel-alta">Dirección General</td>
+                        <td>Gerencia General (CEO)</td>
+                        <td>Toma de decisiones estratégicas, alianzas con laboratorios internacionales de Skin Care y dirección global del negocio.</td>
+                    </tr>
+                    <tr>
+                        <td class="nivel-media">Línea de Staff</td>
+                        <td>Asesoría Legal y de Cumplimiento</td>
+                        <td>Gestión de registros sanitarios ante MINSAL/DNM y trámites formales ante el Ministerio de Trabajo[cite: 4, 5].</td>
+                    </tr>
+                    <tr>
+                        <td class="nivel-media">Control Financiero</td>
+                        <td>Departamento de Contabilidad y Finanzas</td>
+                        <td>Elaboración de estados financieros, proyecciones de presupuestos, balances iniciales y auditoría interna de activos.</td>
+                    </tr>
+                    <tr>
+                        <td>Operativa Comercial</td>
+                        <td>Jefatura de Marketing Digital y Ventas</td>
+                        <td>Creación de campañas publicitarias digitales, posicionamiento de marca y manejo de e-commerce.</td>
+                    </tr>
+                    <tr>
+                        <td>Operativa Comercial</td>
+                        <td>Gestión de Importaciones y Logística</td>
+                        <td>Trámites en Aduanas, coordinación con el CIEX (BCR) para internación de productos y control de inventarios[cite: 4].</td>
+                    </tr>
+                    <tr>
+                        <td>Técnica Especializada</td>
+                        <td>Asesoría Dermatológica / Atención al Cliente</td>
+                        <td>Evaluación guiada de tipos de piel y recomendación personalizada de tratamientos y rutinas.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="cv-haslin">
+            <h2>Hoja de Vida Profesional Incorporada</h2>
+            <div class="cv-header">
+                <h3>Haslin Alexandra Ventura Rodríguez</h3>
+                <p class="cv-meta"><strong>Puesto Objetivo:</strong> Licenciada en Contabilidad / Especialista en Marketing Corporativo</p>
+                <p class="cv-meta"><strong>Contacto:</strong> Tel: +503 7230-0545 | Correo: hasliventura94@gmail.com | Santa Rosa de Lima, El Salvador</p>
+            </div>
+            
+            <h3>Acerca de Mí</h3>
+            <p>Profesional con formación especializada en el área Administrativa Contable y Marketing Digital por la Universidad UNIVO. Con amplias capacidades en la formulación de proyecciones financieras, balances corporativos y diseño de estrategias de posicionamiento de marca en el mercado de la estética y cuidado personal.</p>
+
+            <h3>Educación y Títulos</h3>
+            <ul>
+                <li><strong>Licenciatura en Contabilidad y Marketing</strong> - Universidad de Oriente (UNIVO) | Graduación: 2026.</li>
+                <li><strong>Diplomado de Especialización en Finanzas</strong> - Universidad de Oriente (UNIVO).</li>
+                <li><strong>Técnico Profesional en Contabilidad y Finanzas</strong> - Instituto Nacional Profesor Francisco Ventura Zelaya.</li>
+            </ul>
+
+            <h3>Experiencia Laboral</h3>
+            <p><strong>Contadora Senior y Especialista en Marketing</strong> | Skim Ale (Periodo 2020 - 2025).</p>
+            <ul>
+                <li>Responsable de la preparación, análisis e interpretación de estados financieros de la entidad.</li>
+                <li>Diseño y ejecución de presupuestos anuales y control estricto de activos y pasivos corrientes.</li>
+                <li>Desarrollo de campañas publicitarias digitales dirigidas al nicho de estética, aumentando las conversiones de venta en un 25%.</li>
+            </ul>
+
+            <h3>Habilidades Destacadas</h3>
+            <ul>
+                <li>Análisis y modelado de proyecciones financieras y presupuestos.</li>
+                <li>Elaboración y control de publicidad digital dirigida a redes sociales.</li>
+                <li>Liderazgo de equipos técnicos y comunicación organizacional asertiva.</li>
+                <li>Gestión aduanera y control de costos comerciales[cite: 4].</li>
+            </ul>
+        </section>
+
+        <section id="registro">
+            <h2>Postulate en Línea - Únete al Equipo de ALE'SKIN</h2>
+            <p>¿Eres profesional en Contabilidad, Marketing o Estética? Completa el siguiente formulario técnico e ingresa tus datos de Currículum Vitae para formar parte de nuestros procesos de selección interna.</p>
+            
+            <form action="#" method="POST" onsubmit="alert('¡Gracias por postularte! Tu Currículum Vitae técnico ha sido registrado con éxito en la base de datos de ALE\'SKIN.'); return false;">
+                
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. María Mercedes López" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Número de Teléfono/WhatsApp:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ej. 7000-0000" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="area">Área Técnica de Especialización:</label>
+                    <select id="area" name="area" required>
+                        <option value="">-- Selecciona una opción --</option>
+                        <option value="contabilidad">Contabilidad y Finanzas Corporativas</option>
+                        <option value="marketing">Marketing Digital y Contenido</option>
+                        <option value="logistica">Importaciones y Gestión Logística</option>
+                        <option value="dermatologia">Asesoría Dermatológica y Skin Care</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="perfil">Resumen del Perfil Profesional (Acerca de Mí):</label>
+                    <textarea id="perfil" name="perfil" rows="4" placeholder="Describe brevemente tus estudios y tu experiencia más relevante..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="habilidades">Enlista tus principales habilidades (Separadas por comas):</label>
+                    <input type="text" id="habilidades" name="habilidades" placeholder="Ej. Trabajo en equipo, Estados financieros, Excel avanzado">
+                </div>
+
+                <button type="submit">Enviar Registro de Currículum</button>
+            </form>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 ALE'SKIN Corporativo S.A. de C.V. Todos los derechos reservados.</p>
+        <p>Módulo de Práctica de la Gestión Empresarial - Instituto Nacional Profesor Francisco Ventura Zelaya.</p>
+    </footer>
+
+</body>
+</html>
